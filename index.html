@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Afgan | Personal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel='website icon' type='png' href='logo.png'>
+</head>
+
+<body>
+    <!-- ================= INTRO ================= -->
+    <div id="intro">
+        <h1 class="title">AFGAN</h1>
+        <p class="subtitle">personal | website</p>
+
+        <!-- loading bar -->
+        <div class="loader">
+            <span></span>
+        </div>
+    </div>
+    <!-- ========================================= -->
+
+
+    <!-- ================= MAIN WEBSITE ================= -->
+    <div id="main">
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="logo">AFGAN</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="diri.html">About</a></li>
+                <li><a href="projek.html">Project</a></li>
+                <li><a href="kontak.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-glow"></div>
+
+            <h1>Hello, I'm <span>Afgan</span></h1>
+            <p class="hero-sub">
+                Student • Web Developer • Athlete
+            </p>
+
+            <a href="diri.html" class="btn hero-btn">About Me</a>
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 Afgan. All rights reserved.</p>
+        </footer>
+
+    </div>
+    <!-- =============================================== -->
+
+
+    <!-- ================= SCRIPT ================= -->
+    <script>
+        /*
+            Alur script:
+            1. Tunggu intro selesai
+            2. Fade out intro
+            3. Tampilkan main content
+        */
+
+        setTimeout(() => {
+            const intro = document.getElementById("intro");
+            const main = document.getElementById("main");
+
+            intro.style.opacity = "0";
+
+            setTimeout(() => {
+                intro.style.display = "none";
+                main.style.display = "block";
+                document.body.style.overflow = "hidden"; // 🔒 tetap dikunci
+            }, 800);
+
+        }, 3500);
+    </script>
+    <!-- ========================================= -->
+
+</body>
+
+</html>

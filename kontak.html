@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About | Afgan</title>
+    <link rel="stylesheet" href="diri.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel='website icon' type='png' href='logo.png'>
+
+</head>
+
+<!-- ID ini penting untuk SCOPING -->
+
+<body id="about-page">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="logo">AFGAN</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="diri.html">About</a></li>
+            <li><a href="projek.html">Project</a></li>
+            <li><a href="kontak.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- ================== ISI KONTAK ======================== -->
+    <section class="contact-section">
+        <h1 class="contact-title">Hubungi Saya</h1>
+        <p class="contact-desc">
+            Punya pertanyaan, berbicang dengan saya, atau sekadar ingin menyapa?
+            Jangan ragu untuk menghubungi saya melalui form atau media di bawah ini.
+        </p>
+
+        <div class="contact-wrapper">
+
+            <!-- INFO KONTAK -->
+            <div class="contact-info-box">
+                <h3>Informasi Kontak</h3>
+
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Blega, Bangkalan – Jawa Timur</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+62 813-3413-1755</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>afkarafnani57@gmail.com</span>
+                </div>
+
+                <p class="contact-note">
+                    Saya selalu terbuka untuk siapa saja yang ingin menghubungi saya, baik itu untuk bertanya,
+                    berdiskusi, bekerja sama, maupun sekadar menyapa.
+
+                    Website ini saya buat sebagai ruang personal untuk berbagi perjalanan, pengalaman, dan ketertarikan
+                    saya di dunia teknologi dan pengembangan web. Kalau kamu punya ide menarik, masukan, atau ingin
+                    mengajak kolaborasi dalam sebuah project, jangan ragu untuk menghubungi saya.
+
+                    Kamu bisa mengirim pesan melalui form kontak yang tersedia, dan pesan tersebut akan langsung
+                    terhubung ke WhatsApp saya. Dengan begitu, komunikasi bisa lebih cepat dan praktis. Saya akan
+                    berusaha membalas pesan secepat mungkin.
+
+                    Terima kasih sudah meluangkan waktu untuk mengunjungi website pribadi saya. Semoga kita bisa saling
+                    terhubung dan berbagi hal-hal positif ke depannya.
+                </p>
+            </div>
+
+            <!-- FORM KONTAK -->
+            <form class="contact-form" onsubmit="kirimWhatsApp(event)">
+                <h3>Kirim Pesan</h3>
+
+                <input type="text" id="nama" placeholder="Nama Anda" required>
+
+                <input type="date" id="tgl_lahir" required>
+
+                <textarea id="pesan" placeholder="Tulis pesan Anda..." required></textarea>
+
+                <button type="submit">
+                    <i class="fas fa-paper-plane"></i> Kirim Pesan
+                </button>
+            </form>
+
+            <!-- ================================================= -->
+        </div>
+    </section>
+
+    <!-- ================== JS FROM ============================== -->
+    <script>
+        function kirimWhatsApp(event) {
+            event.preventDefault(); // stop reload
+
+            const nama = document.getElementById("nama").value;
+            const tglLahir = document.getElementById("tgl_lahir").value;
+            const pesan = document.getElementById("pesan").value;
+
+            const nomorWA = "6281334131755"; // nomor WhatsApp (tanpa +)
+
+            const text =
+                `Halo Afgan,%0A%0A` +
+                `Nama saya ${nama}%0A` +
+                `saya berusia ${tglLahir}%0A%0A` +
+                `pesan untuk anda %0A${pesan}`;
+
+            const url = `https://wa.me/${nomorWA}?text=${text}`;
+
+            window.open(url, "_blank");
+        }
+    </script>
+
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Kolom Kiri - Nama Sekolah & Kontak -->
+            <div class="footer-left">
+                <h2 class="footer-logo">Afgan</h2>
+                <p class="school-name">
+                    Alamat rumah :<br>
+                    Rw : 09 Rt : 03<br>
+                    Daya Sungai, Blega<br>
+                    Bangkalan
+                </p><br>
+                <p class="contact-info">
+                    Telepon: +62-81334131755<br>
+                    Email: afkarafnani57@gmail.com<br>
+                    <br>
+                </p>
+            </div>
+
+            <!-- Kolom Kanan - Sosial Media -->
+            <div class="footer-right">
+                <h3 class="sosmed-title">Sosial Media</h3>
+                <p class="sosmed-desc">
+                    Saya memiliki Beberapa Sosial Media<br>
+                    Media Yang Dapat Dikunjungi<br>
+                </p>
+                <div class="social-icons">
+                    <a href="https://wa.me/6281334131755" class="social-icon whatsapp" target="_blank"
+                        aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rxl.gnn?igsh=MTBxb3RsdG9saGd6dQ==" class="social-icon instagram"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/@afkarafnani2069?si=Upj0US6ZXBzy0d7Q" class="social-icon youtube"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@mafkarafnanis?_r=1&_t=ZS-91ZfGafj3Bq" class="social-icon tiktok"
+                        aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-bottom">
+            <p>© 2025 • Karya Afgan • Website: Personal
+                Dari Bangkalan, Untuk Indonesia
+                All Rights Reserved.</p>
+            <p>Designed by Afgan </p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

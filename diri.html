@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About | Afgan</title>
+    <link rel="stylesheet" href="diri.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel='website icon' type='png' href='logo.png'>
+
+</head>
+
+<!-- ID ini penting untuk SCOPING -->
+
+<body id="about-page">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="logo">AFGAN</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="diri.html" class="active">About</a></li>
+            <li><a href="projek.html">Project</a></li>
+            <li><a href="kontak.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- ========================================== -->
+
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section class="about">
+
+        <!-- CONTAINER FOTO -->
+        <div class="photo-wave">
+
+            <!-- RING GELOMBANG -->
+            <span class="wave"></span>
+            <span class="wave"></span>
+            <span class="wave"></span>
+
+            <!-- FOTO PROFIL (TETAP DIAM) -->
+            <img src="img/gan2.jpeg" alt="Foto Afgan">
+
+        </div>
+
+        <!-- TEKS DESKRIPSI -->
+        <div class="about-text">
+            <h2> <i class="fa-solid fa-user"></i> About Me</h2>
+            <p>
+                Halooo, perkenalkan nama saya <b>M.Afkar Afnani S</b> call me <b>Afgan</b>, my date of birth
+                <i>22/07/2008</i> saya seorang pelajar <b>SMK NEGERI 1 BLEGA</b> yang
+                tertarik dengan <span>Web Development</span>.
+            </p>
+            <p>
+                Saya fokus membuat website yang berbasis
+                <b>HTML</b>, <b>CSS</b>, dan <b>JAVA SCRIPT.</b>
+            </p>
+        </div>
+
+    </section>
+    <!-- ==================== PANAH ============================ -->
+    <section class="arrow-section">
+        <i class="fa-solid fa-arrow-down arrow-icon"></i>
+    </section>
+
+
+    <!-- ================= PHOTO GALLERY ================= -->
+    <section class="about-gallery">
+
+        <h3>Moments About Me</h3>
+        <p class="gallery-desc">
+            Beberapa momen yang menggambarkan perjalanan dan keseharian saya.
+        </p>
+
+        <div class="gallery-grid">
+
+            <!-- FOTO 1 -->
+            <div class="gallery-item">
+                <img src="img/g.jpeg" alt="Afgan coding">
+                <div class="gallery-caption">
+                    <h4>Web Development</h4>
+                    <span>20 January 2026</span>
+                </div>
+            </div>
+
+            <!-- FOTO 2 -->
+            <div class="gallery-item">
+                <img src="img/2.jpg" alt="Afgan belajar">
+                <div class="gallery-caption">
+                    <h4>Gerjal Se-Bangkalan 2025</h4>
+                    <span>25 Maret 2024</span>
+                </div>
+            </div>
+
+            <!-- FOTO 3 -->
+            <div class="gallery-item">
+                <img src="img/juara1.jpeg" alt="Afgan santai">
+                <div class="gallery-caption">
+                    <h4>Atlet Cabor Kabaddi Juara 1 Se-jatim</h4>
+                    <span>22 Desember 2024</span>
+                </div>
+            </div>
+
+            <!-- FOTO 4 -->
+            <div class="gallery-item">
+                <img src="img/31.jpeg" alt="Afgan sekolah">
+                <div class="gallery-caption">
+                    <h4>Dewan Ambalan praskasaga.</h4>
+                    <span>10 juli 2024</span>
+                </div>
+            </div>
+
+        </div>
+        <p class="load-more" onclick="toggleGallery()">
+            Load more
+        </p>
+        <!-- GAMBAR TAMBAHAN (AWALNYA DISIMPAN) -->
+        <div class="gallery-grid hidden" id="moreGallery">
+
+            <div class="gallery-item">
+                <img src="img/22.jpeg" alt="Foto 5">
+                <div class="gallery-caption">
+                    <h4>Mountain Mt.Lorokan</h4>
+                    <span>22 Desember 2025</span>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/4.jpeg" alt="Foto 6">
+                <div class="gallery-caption">
+                    <h4>Atlet Cabor Kabaddi championship 3 Piala bupati Mojokerto</h4>
+                    <span>17 January 2025</span>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/5.jpeg" alt="Foto 7">
+                <div class="gallery-caption">
+                    <h4>Solo Running</h4>
+                    <span>14 July 2025</span>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/3.jpeg" alt="Foto 8">
+                <div class="gallery-caption">
+                    <h4>Mountain Mt.Pundhak</h4>
+                    <span>22 Desember 2025</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= PERSONAL NOTE ================= -->
+    <section class="personal-note">
+        <div class="note-card">
+            <h3>Catatan Tentang Saya <i class="fa-solid fa-pencil"></i></h3>
+            <p>
+                Saya adalah <b>Afgan</b>, pelajar yang lahir pada tahun <b>2008</b>
+                dan merupakan anak <b>pertama dari tiga bersaudara</b>.
+                Saya memiliki minat besar pada kegiatan <b>olahraga fisik</b>
+                seperti <span>running</span>, <span>workout</span>,
+                <span>kabaddi</span>, dan <span>paskibra</span>,
+                yang membentuk karakter disiplin dan konsisten dalam keseharian saya.
+            </p>
+
+            <p>
+                Selain aktif di bidang olahraga, saya juga menekuni dunia
+                <span>Web Development</span>.
+                Saya fokus membangun website menggunakan
+                <b>HTML</b>, <b>CSS</b>, dan <b>JavaScript</b>,
+                dengan tujuan menciptakan tampilan yang rapi,
+                responsif, dan nyaman digunakan.
+                Website ini menjadi media untuk mendokumentasikan
+                proses belajar dan perkembangan diri saya.
+            </p>
+
+            <p class="note-quote">
+                “Usaha tidak akan mengkhianati hasil, setiap usaha pasti ada jalanya.”
+            </p>
+
+        </div>
+    </section>
+
+
+    <script>
+        function toggleGallery() {
+            const moreGallery = document.getElementById("moreGallery");
+            const text = document.querySelector(".load-more");
+
+            if (moreGallery.style.display === "grid") {
+                moreGallery.style.display = "none";
+                text.innerHTML = "Load More";
+            } else {
+                moreGallery.style.display = "grid";
+                text.innerHTML = "Hide";
+            }
+        }
+    </script>
+
+
+    <!-- ================================================ -->
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Kolom Kiri - Nama Sekolah & Kontak -->
+            <div class="footer-left">
+                <h2 class="footer-logo">Afgan</h2>
+                <p class="school-name">
+                    Alamat rumah :<br>
+                    Rw : 09 Rt : 03<br>
+                    Daya Sungai, Blega<br>
+                    Bangkalan
+                </p><br>
+                <p class="contact-info">
+                    Telepon: +62-81334131755<br>
+                    Email: afkarafnani57@gmail.com<br>
+                    <br>
+                </p>
+            </div>
+
+            <!-- Kolom Kanan - Sosial Media -->
+            <div class="footer-right">
+                <h3 class="sosmed-title">Sosial Media</h3>
+                <p class="sosmed-desc">
+                    Saya memiliki Beberapa Sosial Media<br>
+                    Media Yang Dapat Dikunjungi<br>
+                </p>
+                <div class="social-icons">
+                    <a href="https://wa.me/6281334131755" class="social-icon whatsapp" target="_blank"
+                        aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rxl.gnn?igsh=MTBxb3RsdG9saGd6dQ==" class="social-icon instagram"
+                        aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/@afkarafnani2069?si=Upj0US6ZXBzy0d7Q" class="social-icon youtube"
+                        aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@mafkarafnanis?_r=1&_t=ZS-91ZfGafj3Bq" class="social-icon tiktok"
+                        aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-bottom">
+            <p>© 2025 • Karya Afgan • Website: Personal
+                Dari Bangkalan, Untuk Indonesia
+                All Rights Reserved.</p>
+            <p>Designed by Afgan </p>
+        </div>
+    </footer>
+
+    <!-- ================================================ -->
+
+</body>
+
+</html>

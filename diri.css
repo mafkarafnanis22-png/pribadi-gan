@@ -1,0 +1,681 @@
+/* ==========================================
+   CSS KHUSUS ABOUT PAGE
+   Semua di-scope ke #about-page
+========================================== */
+
+#about-page {
+    background: radial-gradient(circle at top, #020617, #000);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+}
+
+/* ================= NAVBAR ================= */
+#about-page .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+    border-bottom: 1px solid #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* biar gak ketiban konten lain */
+    background: #020617; /* wajib, biar gak transparan */
+}
+
+#about-page .logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+#about-page .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+#about-page .nav-links a {
+    text-decoration: none;
+    color: #cbd5f5;
+    position: relative;
+}
+
+/* GARIS BAWAH HOVER */
+#about-page .nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #38bdf8;
+    left: 0;
+    bottom: -6px;
+    transition: 0.3s;
+}
+
+#about-page .nav-links a:hover::after,
+#about-page .nav-links a.active::after {
+    width: 100%;
+}
+
+/* LINK AKTIF */
+#about-page .nav-links a.active {
+    color: #38bdf8;
+}
+
+/* ================= ABOUT SECTION ================= */
+.about {
+    display: flex;                 /* layout kiri-kanan */
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    padding: 120px 80px;
+}
+
+/* CONTAINER FOTO */
+.photo-wave {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* FOTO PROFIL */
+.photo-wave img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 2;
+    position: relative;
+    border: 3px solid #38bdf8;
+}
+
+/* RING GELOMBANG */
+.wave {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 5px solid rgba(56, 189, 248, 0.6);
+    opacity: 0;
+    transform: scale(1);
+}
+
+/* AKTIF SAAT HOVER */
+.photo-wave:hover .wave {
+    animation: ripple 2.5s ease-out infinite;
+}
+
+/* VARIASI WAKTU */
+.photo-wave .wave:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.photo-wave .wave:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.photo-wave .wave:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+/* TEKS */
+.about-text {
+    max-width: 480px;
+}
+
+.about-text h2 {
+    font-size: 38px;
+    color: #38bdf8;
+    margin-bottom: 16px;
+}
+
+.about-text p {
+    color: #cbd5f5;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.about-text span {
+    color: #38bdf8;
+    font-weight: bold;
+}
+/* ================================================ */
+
+
+/* ================= ANIMASI ================= */
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.6); /* mengembang */
+        opacity: 0;
+    }
+}
+/* ===================== PANAH ======================= */
+.arrow-section {
+    height: 0vh;              /* tinggi 1 layar penuh */
+    display: flex;
+    justify-content: center;    /* tengah horizontal */
+    align-items: center;        /* tengah vertikal */
+}
+
+.arrow-icon {
+    font-size: 48px;            /* ukuran icon */
+    color: #38bdf8;             /* warna biru */
+    animation: arrowFloat 1.6s ease-in-out infinite;
+    text-shadow: 0 0 15px rgba(56,189,248,0.7);
+}
+
+/* animasi naik turun */
+@keyframes arrowFloat {
+    0% { transform: translateY(0); opacity: .6; }
+    50% { transform: translateY(12px); opacity: 1; }
+    100% { transform: translateY(0); opacity: .6; }
+}
+
+/* ================= PHOTO GALLERY ================= */
+.about-gallery {
+    padding: 3.5cm 80px 120px;
+    text-align: center;
+}
+
+.about-gallery h3 {
+    font-size: 32px;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.gallery-desc {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+/* GRID FOTO */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* ITEM FOTO */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    cursor: pointer;
+    border: 2px solid #38bdf8;
+}
+
+/* GAMBAR */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* HOVER EFEK */
+.gallery-item:hover img {
+    transform: scale(1.12);
+    filter: brightness(1.1);
+}
+
+/* CAPTION */
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0)
+    );
+
+    text-align: left;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: 0.4s ease;
+}
+
+.gallery-caption h4 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.gallery-caption span {
+    color: #cbd5f5;
+    font-size: 12px;
+}
+
+/* MUNCUL SAAT HOVER */
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* icon load more */
+/* SEMBUNYIKAN GALERI TAMBAHAN */
+.hidden {
+    display: none;
+}
+
+/* TOMBOL LOAD MORE */
+.load-more {
+    margin-top: 35px;
+    color: #38bdf8;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.load-more:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+/* ================= PERSONAL NOTE ================= */
+.personal-note {
+    padding: 100px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.note-card {
+    max-width: 700px;
+    padding: 35px 40px;
+    border-radius: 20px;
+    background: rgba(56, 189, 248, 0.05);
+    border: 1.5px solid rgba(56, 189, 248, 0.4);
+    backdrop-filter: blur(6px);
+}
+
+.note-card h3 {
+    color: #38bdf8;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.note-card p {
+    color: #cbd5f5;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.note-card span {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+.note-quote {
+    margin-top: 20px;
+    font-style: italic;
+    color: #94a3b8;
+    border-left: 3px solid #38bdf8;
+    padding-left: 15px;
+}
+
+
+
+/* ===================== KONTAK.HTML ================================= */
+/* ================= KONTAK SECTION ================= */
+.contact-section {
+    padding: 120px 80px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 36px;
+    color: #38bdf8;
+    margin-bottom: 12px;
+}
+
+.contact-desc {
+    font-size: 15px;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 60px;
+    line-height: 1.6;
+}
+
+/* WRAPPER */
+.contact-wrapper {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+/* INFO KONTAK */
+.contact-info-box {
+    background: rgba(2, 6, 23, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 18px;
+    padding: 40px;
+    text-align: left;
+}
+
+.contact-info-box h3 {
+    color: #38bdf8;
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    color: #cbd5f5;
+    font-size: 15px;
+}
+
+.contact-item i {
+    color: #38bdf8;
+    font-size: 18px;
+}
+
+.contact-note {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* FORM */
+.contact-form {
+    background: rgba(2, 6, 23, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 18px;
+    padding: 40px;
+}
+
+.contact-form h3 {
+    color: #38bdf8;
+    margin-bottom: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    background: #020617;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #020617;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.contact-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.5);
+}
+
+/* RESPONSIF */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 100px 30px;
+    }
+}
+/* ============== PROJEK.HTML ==================== */
+/* ================= PROJECT ================= */
+.project-section {
+    padding: 120px 80px;
+    text-align: center;
+}
+
+.project-title {
+    font-size: 36px;
+    color: #38bdf8;
+    margin-bottom: 12px;
+}
+
+.project-desc {
+    max-width: 650px;
+    margin: 0 auto 60px;
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* GRID */
+.project-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+/* CARD (SEKARANG A TAG) */
+.project-card {
+    background: rgba(2, 6, 23, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(56,189,248,0.25), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+
+/* ICON */
+.project-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.project-icon i {
+    font-size: 26px;
+    color: #38bdf8;
+}
+
+/* TEXT */
+.project-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #e5e7eb;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* RESPONSIF */
+@media (max-width: 768px) {
+    .project-section {
+        padding: 100px 30px;
+    }
+}
+
+/* ======================= FOOTER ======================= */
+.footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);
+    color: #ccc;
+    padding: 60px 20px 20px;
+    margin-top: 80px;
+    border-top: 1px solid rgba(56, 189, 248, 0.4); /*garis atas*/
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    min-width: 280px;
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #38bdf8;
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.school-name {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+.contact-info {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #999;
+}
+
+.sosmed-title {
+    font-size: 20px;
+    color: #38bdf8;
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+.sosmed-desc {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.social-icon:hover {
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.6);
+}
+
+/* WhatsApp Icon - Warna Hijau Khas */
+.social-icon.whatsapp {
+    background: #25D366;           /* Hijau WhatsApp resmi */
+    color: white;
+    font-size: 26px;               /* Sedikit lebih besar biar pas */
+}
+
+.social-icon.whatsapp:hover {
+    transform: translateY(-8px) scale(1.15);
+    
+   background: #25D366;          /* Sedikit gelap saat hover */
+}
+
+.social-icon.facebook   { background: #1877f2; }
+.social-icon.instagram  { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.social-icon.youtube    { background: #ff0000; }
+.social-icon.tiktok     { background: #000000; border: 3px solid #ff0050; color: #ff0050; }
+
+/* Copyright Bar */
+.footer-bottom {
+    max-width: 1100px;
+    margin: 50px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(56, 189, 248, 0.4);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: #777;
+    gap: 15px;
+}
+
+.footer-bottom p:last-child {
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
