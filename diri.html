@@ -16,7 +16,7 @@
 
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar">
-        <div class="logo">AA</div>
+        <div class="logo">Aa</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="diri.html" class="active">About</a></li>
@@ -225,6 +225,62 @@
             setLang("en");
         };
     </script>
+
+    <!-- ================= HOBBY & INTEREST ================= -->
+    <section class="hobby-section">
+        <h2 class="hobby-title">
+            <i class="fa-solid fa-heart"></i> Hobi & Hal yang Saya Senangi
+        </h2>
+        <p class="hobby-desc">
+            Beberapa aktivitas yang saya nikmati dan menjadi bagian dari keseharian saya.
+        </p>
+
+        <div class="hobby-grid">
+
+            <div class="hobby-card">
+                <i class="fa-solid fa-code"></i>
+                <h4>Ngoding</h4>
+                <p>Membuat website dengan HTML, CSS, dan JavaScript.</p>
+            </div>
+
+            <div class="hobby-card">
+                <i class="fa-solid fa-person-running"></i>
+                <h4>Running</h4>
+                <p>Menjaga fisik dan Endurens pernafasan dengan running yang konsisten.</p>
+            </div>
+
+            <div class="hobby-card">
+                <i class="fa-solid fa-dumbbell"></i>
+                <h4>Workout</h4>
+                <p>Melatih otot dan konsistensi diri.</p>
+            </div>
+
+            <div class="hobby-card">
+                <i class="fa-solid fa-people-group"></i>
+                <h4>Kabaddi</h4>
+                <p>Belajar kekompakan tim, fokus, dan tanggung jawab.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const hobbyCards = document.querySelectorAll(".hobby-card");
+
+        const revealHobby = () => {
+            hobbyCards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const screenHeight = window.innerHeight;
+
+                if (cardTop < screenHeight - 80) {
+                    card.classList.add("show");
+                }
+            });
+        };
+
+        window.addEventListener("scroll", revealHobby);
+    </script>
+
 
     <!-- ================= PERSONAL NOTE ================= -->
     <section class="personal-note">
