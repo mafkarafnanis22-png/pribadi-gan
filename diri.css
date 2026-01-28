@@ -1,8 +1,3 @@
-/* ==========================================
-   CSS KHUSUS ABOUT PAGE
-   Semua di-scope ke #about-page
-========================================== */
-
 #about-page {
     background: radial-gradient(circle at top, #020617, #000);
     color: white;
@@ -19,8 +14,10 @@
     border-bottom: 1px solid #1e293b;
     position: sticky;
     top: 0;
-    z-index: 1000; /* biar gak ketiban konten lain */
-    background: #020617; /* wajib, biar gak transparan */
+    z-index: 1000;
+    /* biar gak ketiban konten lain */
+    background: #020617;
+    /* wajib, biar gak transparan */
 }
 
 #about-page .logo {
@@ -65,7 +62,8 @@
 
 /* ================= ABOUT SECTION ================= */
 .about {
-    display: flex;                 /* layout kiri-kanan */
+    display: flex;
+    /* layout kiri-kanan */
     align-items: center;
     justify-content: center;
     gap: 90px;
@@ -141,6 +139,7 @@
     color: #38bdf8;
     font-weight: bold;
 }
+
 /* ================================================ */
 
 
@@ -150,31 +149,64 @@
         transform: scale(1);
         opacity: 0.7;
     }
+
     100% {
-        transform: scale(1.6); /* mengembang */
+        transform: scale(1.6);
+        /* mengembang */
         opacity: 0;
     }
 }
+
 /* ===================== PANAH ======================= */
 .arrow-section {
-    height: 0vh;              /* tinggi 1 layar penuh */
+    height: 0vh;
+    /* tinggi 1 layar penuh */
     display: flex;
-    justify-content: center;    /* tengah horizontal */
-    align-items: center;        /* tengah vertikal */
+    justify-content: center;
+    /* tengah horizontal */
+    align-items: center;
+    /* tengah vertikal */
 }
 
 .arrow-icon {
-    font-size: 48px;            /* ukuran icon */
-    color: #38bdf8;             /* warna biru */
+    font-size: 48px;
+    /* ukuran icon */
+    color: #38bdf8;
+    /* warna biru */
     animation: arrowFloat 1.6s ease-in-out infinite;
-    text-shadow: 0 0 15px rgba(56,189,248,0.7);
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
 }
+
+.arrow-link {
+    display: inline-block;
+    color: #38bdf8;
+    font-size: 26px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.arrow-link:hover {
+    transform: translateY(6px);
+    color: #7dd3fc;
+}
+
 
 /* animasi naik turun */
 @keyframes arrowFloat {
-    0% { transform: translateY(0); opacity: .6; }
-    50% { transform: translateY(12px); opacity: 1; }
-    100% { transform: translateY(0); opacity: .6; }
+    0% {
+        transform: translateY(0);
+        opacity: .6;
+    }
+
+    50% {
+        transform: translateY(12px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: .6;
+    }
 }
 
 /* ================= PHOTO GALLERY ================= */
@@ -233,11 +265,9 @@
     width: 100%;
     padding: 14px;
 
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.75),
-        rgba(0, 0, 0, 0)
-    );
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0));
 
     text-align: left;
     opacity: 0;
@@ -261,6 +291,7 @@
     opacity: 1;
     transform: translateY(0);
 }
+
 /* icon load more */
 /* SEMBUNYIKAN GALERI TAMBAHAN */
 .hidden {
@@ -280,6 +311,86 @@
     color: #7dd3fc;
     text-decoration: underline;
 }
+
+/* ================= JOURNEY CERITA PROSES ================= */
+.journey {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.journey-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.journey-header h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.journey-header p {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* SWITCH BAHASA */
+.lang-switch {
+    margin-top: 20px;
+}
+
+.lang-switch button {
+    background: transparent;
+    border: 1px solid #1e293b;
+    color: #cbd5f5;
+    padding: 6px 16px;
+    cursor: pointer;
+    margin: 0 4px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.lang-switch button.active,
+.lang-switch button:hover {
+    background: #38bdf8;
+    color: #020617;
+}
+
+/* TIMELINE */
+.timeline {
+    border-left: 2px solid #1e293b;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -41px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: #38bdf8;
+    border-radius: 50%;
+}
+
+.year {
+    font-size: 13px;
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+.timeline-item p {
+    margin-top: 6px;
+    font-size: 15px;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
 /* ================= PERSONAL NOTE ================= */
 .personal-note {
     padding: 100px 80px;
@@ -449,6 +560,7 @@
         padding: 100px 30px;
     }
 }
+
 /* ============== PROJEK.HTML ==================== */
 /* ================= PROJECT ================= */
 .project-section {
@@ -496,7 +608,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at top, rgba(56,189,248,0.25), transparent);
+    background: radial-gradient(circle at top, rgba(56, 189, 248, 0.25), transparent);
     opacity: 0;
     transition: 0.4s;
 }
@@ -507,7 +619,7 @@
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
 }
 
 /* ICON */
@@ -553,7 +665,8 @@
     color: #ccc;
     padding: 60px 20px 20px;
     margin-top: 80px;
-    border-top: 1px solid rgba(56, 189, 248, 0.4); /*garis atas*/
+    border-top: 1px solid rgba(56, 189, 248, 0.4);
+    /*garis atas*/
 }
 
 .footer-container {
@@ -565,7 +678,8 @@
     gap: 40px;
 }
 
-.footer-left, .footer-right {
+.footer-left,
+.footer-right {
     flex: 1;
     min-width: 280px;
 }
@@ -620,31 +734,47 @@
     font-size: 22px;
     color: white;
     transition: all 0.4s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 .social-icon:hover {
     transform: translateY(-8px) scale(1.1);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.6);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
 }
 
 /* WhatsApp Icon - Warna Hijau Khas */
 .social-icon.whatsapp {
-    background: #25D366;           /* Hijau WhatsApp resmi */
+    background: #25D366;
+    /* Hijau WhatsApp resmi */
     color: white;
-    font-size: 26px;               /* Sedikit lebih besar biar pas */
+    font-size: 26px;
+    /* Sedikit lebih besar biar pas */
 }
 
 .social-icon.whatsapp:hover {
     transform: translateY(-8px) scale(1.15);
-    
-   background: #25D366;          /* Sedikit gelap saat hover */
+
+    background: #25D366;
+    /* Sedikit gelap saat hover */
 }
 
-.social-icon.facebook   { background: #1877f2; }
-.social-icon.instagram  { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-.social-icon.youtube    { background: #ff0000; }
-.social-icon.tiktok     { background: #000000; border: 3px solid #ff0050; color: #ff0050; }
+.social-icon.facebook {
+    background: #1877f2;
+}
+
+.social-icon.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-icon.youtube {
+    background: #ff0000;
+}
+
+.social-icon.tiktok {
+    background: #000000;
+    border: 3px solid #ff0050;
+    color: #ff0050;
+}
 
 /* Copyright Bar */
 .footer-bottom {
@@ -671,10 +801,12 @@
         flex-direction: column;
         text-align: center;
     }
+
     .footer-bottom {
         flex-direction: column;
         text-align: center;
     }
+
     .social-icons {
         justify-content: center;
     }

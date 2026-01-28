@@ -16,7 +16,7 @@
 
     <!-- ================= NAVBAR ================= -->
     <nav class="navbar">
-        <div class="logo">AFGAN</div>
+        <div class="logo">AA</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="diri.html" class="active">About</a></li>
@@ -60,13 +60,13 @@
     </section>
     <!-- ==================== PANAH ============================ -->
     <section class="arrow-section">
-        <i class="fa-solid fa-arrow-down arrow-icon"></i>
+        <a href="#gallery" class="arrow-link">
+            <i class="fa-solid fa-arrow-down arrow-icon"></i>
+        </a>
     </section>
 
-
     <!-- ================= PHOTO GALLERY ================= -->
-    <section class="about-gallery">
-
+    <section class="about-gallery" id="gallery">
         <h3>Moments About Me</h3>
         <p class="gallery-desc">
             Beberapa momen yang menggambarkan perjalanan dan keseharian saya.
@@ -116,7 +116,6 @@
         </p>
         <!-- GAMBAR TAMBAHAN (AWALNYA DISIMPAN) -->
         <div class="gallery-grid hidden" id="moreGallery">
-
             <div class="gallery-item">
                 <img src="img/22.jpeg" alt="Foto 5">
                 <div class="gallery-caption">
@@ -129,7 +128,7 @@
                 <img src="img/4.jpeg" alt="Foto 6">
                 <div class="gallery-caption">
                     <h4>Atlet Cabor Kabaddi championship 3 Piala bupati Mojokerto</h4>
-                    <span>17 January 2025</span>
+                    <span>22 Desember 2025</span>
                 </div>
             </div>
 
@@ -151,6 +150,81 @@
 
         </div>
     </section>
+
+    <section class="journey">
+        <div class="journey-header">
+            <h2 id="journey-title">Perjalanan Saya</h2>
+            <p id="journey-desc">
+                Cerita singkat tentang langkah, proses, dan mimpi yang saya jalani.
+            </p>
+
+            <div class="lang-switch">
+                <button onclick="setLang('en')" class="active" id="btn-en">EN</button>
+                <button onclick="setLang('id')" id="btn-id">ID</button>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="year">2024</span>
+                <p class="text" data-id="Mulai tertarik dengan dunia teknologi dan belajar dasar web."
+                    data-en="Started getting interested in technology and learning basic web development.">
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="year">2025</span>
+                <p class="text" data-id="Mulai membangun project sederhana dan memperdalam skill."
+                    data-en="Started building small projects and improving my skills.">
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="year">2026</span>
+                <p class="text" data-id="Membuat website personal sebagai identitas digital."
+                    data-en="Created a personal website as a digital identity.">
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="year">2027</span>
+                <p class="text" data-id="Terus belajar, berkembang, dan mengejar mimpi."
+                    data-en="Continuing to learn, grow, and chase my dreams.">
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function setLang(lang) {
+            const texts = document.querySelectorAll(".text");
+            const title = document.getElementById("journey-title");
+            const desc = document.getElementById("journey-desc");
+
+            if (lang === "id") {
+                title.innerText = "Perjalanan Saya";
+                desc.innerText = "Cerita singkat tentang langkah, proses, dan mimpi yang saya jalani.";
+                texts.forEach(t => t.innerText = t.dataset.id);
+                btnActive("id");
+            } else {
+                title.innerText = "My Journey";
+                desc.innerText = "A short story about my steps, process, and dreams.";
+                texts.forEach(t => t.innerText = t.dataset.en);
+                btnActive("en");
+            }
+        }
+
+        function btnActive(lang) {
+            document.getElementById("btn-id").classList.remove("active");
+            document.getElementById("btn-en").classList.remove("active");
+            document.getElementById("btn-" + lang).classList.add("active");
+        }
+
+        /* INGGRIS TAMPIL PERTAMA */
+        window.onload = () => {
+            setLang("en");
+        };
+    </script>
 
     <!-- ================= PERSONAL NOTE ================= -->
     <section class="personal-note">

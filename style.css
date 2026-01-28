@@ -72,7 +72,7 @@ html, body {
 #main {
     display: none;
     height: 100vh;      /* ⬅️ ganti min-height */
-    overflow: hidden;  /* ⬅️ kunci isi */
+    overflow: auto;  /* ⬅️ kunci isi */
     background: radial-gradient(circle at top, #020617, #000);
     animation: fadeIn 1.5s ease forwards;
 }
@@ -122,27 +122,56 @@ html, body {
 }
 
 /* ================= HERO ENHANCED ================= */
+/* ================= HERO SPLIT ================= */
 .hero {
-    position: relative;
     height: calc(100vh - 160px);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 18px;
-    text-align: center;
-    overflow: hidden;
+    justify-content: space-between;
+    padding: 0 80px;
+    gap: 40px;
 }
 
-/* CAHAYA LATAR */
-.hero-glow {
-    position: absolute;
-    width: 520px;
-    height: 520px;
-    background: radial-gradient(circle, rgba(56,189,248,0.18), transparent 70%);
-    filter: blur(80px);
-    z-index: 0;
+/* KIRI (TEKS) */
+.hero-left {
+    flex: 1;
+    animation: slideUp 1s ease forwards;
 }
+
+.hero-left h1 {
+    font-size: 56px;
+    margin-bottom: 14px;
+}
+
+#typing {
+    color: #38bdf8;
+    border-right: 2px solid #38bdf8;
+    padding-right: 4px;
+}
+
+.hero-left .hero-sub {
+    margin-bottom: 26px;
+}
+
+/* KANAN (FOTO) */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-right img {
+    width: 450px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 0; /* TANPA BINGKAI */
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+
+
+/* CAHAYA LATAR */
+
 
 /* TEKS */
 .hero h1 {
@@ -202,14 +231,25 @@ html, body {
     color: #020617;
 }
 
-/* FOOTER */
+/* FOOTER SEDERHANA */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 18px 0;
     font-size: 13px;
-    color: #64748b;
+    color: #94a3b8;
     border-top: 1px solid #1e293b;
+    background: #020617;
 }
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 /* ========================================= */
 
 
@@ -237,5 +277,3 @@ footer {
         transform: scale(1);
     }
 }
-/* ==================== DIRI.HTML ======================== */
-

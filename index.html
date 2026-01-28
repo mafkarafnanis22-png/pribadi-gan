@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Afgan | Personal</title>
+    <title>About | Afgan</title>
     <link rel="stylesheet" href="style.css">
     <link rel='website icon' type='png' href='logo.png'>
 </head>
@@ -24,10 +24,9 @@
 
     <!-- ================= MAIN WEBSITE ================= -->
     <div id="main">
-
         <!-- NAVBAR -->
         <nav class="navbar">
-            <div class="logo">AFGAN</div>
+            <div class="logo">AA</div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="diri.html">About</a></li>
@@ -37,25 +36,61 @@
         </nav>
 
         <section class="hero">
-            <div class="hero-glow"></div>
+            <div class="hero-left">
+                <h1>
+                    Hello, <span id="typing"></span>
+                </h1>
+                <p class="hero-sub">
+                    Selamat datang di website pribadi saya. Di sini saya berbagi tentang diri saya, karya, dan
+                    perjalanan yang sedang saya jalani.
+                </p>
 
-            <h1>Hello, I'm <span>Afgan</span></h1>
-            <p class="hero-sub">
-                Student • Web Developer • Athlete
-            </p>
+                <a href="diri.html" class="btn hero-btn">About Me</a>
+            </div>
 
-            <a href="diri.html" class="btn hero-btn">About Me</a>
+            <div class="hero-right">
+                <img src="img/idx.png" alt="Afgan">
+            </div>
         </section>
-
-
-        <!-- FOOTER -->
-        <footer>
-            <p>© 2026 Afgan. All rights reserved.</p>
-        </footer>
-
     </div>
     <!-- =============================================== -->
+    <script>
+        const text = "I'm Afgan";
+        const typingEl = document.getElementById("typing");
 
+        let index = 0;
+        let isDeleting = false;
+
+        function typeLoop() {
+            if (!isDeleting) {
+                // ngetik
+                typingEl.textContent = text.substring(0, index + 1);
+                index++;
+
+                if (index === text.length) {
+                    setTimeout(() => isDeleting = true, 1200); // jeda sebelum hapus
+                }
+            } else {
+                // hapus
+                typingEl.textContent = text.substring(0, index - 1);
+                index--;
+
+                if (index === 0) {
+                    isDeleting = false;
+                }
+            }
+
+            const speed = isDeleting ? 80 : 120;
+            setTimeout(typeLoop, speed);
+        }
+
+        typeLoop();
+    </script>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Afgan. All rights reserved.
+    </footer>
 
     <!-- ================= SCRIPT ================= -->
     <script>
@@ -75,7 +110,7 @@
             setTimeout(() => {
                 intro.style.display = "none";
                 main.style.display = "block";
-                document.body.style.overflow = "hidden"; // 🔒 tetap dikunci
+                document.body.style.overflow = "auto"; // 🔒 tetap dikunci
             }, 800);
 
         }, 3500);
